@@ -213,6 +213,75 @@ function App() {
 
 */
 
+/* 
+----------------------------------------------------------
+-------------- Conditional Rendering ---------------------
+----------------------------------------------------------
+
+
+Using ( && ) Operater 
+
+
+------------------ Exapmle 
+
+const people = [
+  "Creola Katherine Johnson: mathematician",
+  "Mario José Molina-Pasquel Henríquez: chemist",
+  "Mohammad Abdus Salam: physicist",
+  "Percy Lavon Julian: chemist",
+  "Subrahmanyan Chandrasekhar: astrophysicist",
+];
+
+
+const person = people;
+const numpeople = people.length;
+
+
+{numpeople > 3 && (
+  <ul>
+      {person.map((per) => (
+        <li>{per}</li>
+    ))}
+  </ul>
+)}
+
+
+
+
+
+Using ( ? ) Operater  gain first condition and second is result and thrid is false
+
+
+------------------ Exapmle 
+
+const people = [
+  "Creola Katherine Johnson: mathematician",
+  "Mario José Molina-Pasquel Henríquez: chemist",
+  "Mohammad Abdus Salam: physicist",
+  "Percy Lavon Julian: chemist",
+  "Subrahmanyan Chandrasekhar: astrophysicist",
+];
+
+
+const person = people;
+const numpeople = people.length;
+
+
+{numpeople > 0 && numpeople <= 5 ? (
+  <ul>
+    {person.map((per) => (
+      <li>{per}</li>
+    ))}
+  </ul>
+   : (
+     <p>hhhhhhhhhhhh</p>
+)}
+
+*/
+
+/* 
+
+
 /*
 ----------------------------------------------------------
 ----------- React Fragment -------------------------------
@@ -243,7 +312,182 @@ function App() {
   );
 }
 
-
 ⚠️ Adds unnecessary div to DOM
+
+*/
+
+/* 
+----------------------------------------------------------
+----------- Import & Export in React Js ------------------
+----------------------------------------------------------
+
+In React (and JavaScript), import and export are used to share code between different files.
+
+---------- ✅ Why We Use export
+
+export is used to send something (like a component, function, or variable) from one file so other files can use it.
+
+------ Example:
+
+// Header.js
+
+function Header() {
+  return <h1>Hello World</h1>;
+}
+
+export default Header;
+
+
+----- Here:
+
+We created a component Header
+We exported it using export default
+Now other files can use it.
+
+
+----------- ✅ Why We Use import
+
+import is used to receive something from another file.
+
+---------- Example:
+
+// App.js
+
+import Header from "./Header";
+
+function App() {
+  return (
+    <>
+      <Header />
+    </>
+  );
+}
+
+
+Here:
+
+We imported the Header component
+Now we can use <Header /> inside App
+
+*/
+
+/* 
+----------------------------------------------------------
+------------- Event Handlings in React -------------------
+----------------------------------------------------------
+
+Event handling in react means responding to user like clicks , typing , submitting forms etc.
+
+------------ 🟢 1️⃣ onClick Event (Most Common)
+
+function App() {
+  function handleClick() {
+    alert("Button clicked!");
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click Me
+    </button>
+  );
+}
+
+✔ onClick is camelCase
+✔ We pass function reference {handleClick}
+❌ Not "handleClick()"
+
+
+----------- 🟢 2️⃣ onChange Event (Forms)
+
+Very important for your login/signup forms.
+
+import { useState } from "react";
+
+function App() {
+  const [name, setName] = useState("");
+
+  function handleChange(event) {
+    setName(event.target.value);
+  }
+
+  return (
+    <>
+      <input type="text" onChange={handleChange} />
+      <p>Your name: {name}</p>
+    </>
+  );
+}
+
+
+Here:
+event.target.value gets input value
+useState updates UI automatically
+
+
+------------- 🟢 3️⃣ onSubmit Event (Forms)
+
+function App() {
+  function handleSubmit(event) {
+    event.preventDefault(); // stop page refresh
+    alert("Form Submitted!");
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+⚠ Always use event.preventDefault() in forms
+
+
+
+--------------- 🟢 4️⃣ Passing Parameters in Event
+
+function App() {
+  function handleClick(name) {
+    alert(name);
+  }
+
+  return (
+    <button onClick={() => handleClick("Ali")}>
+      Click
+    </button>
+  );
+}
+
+We use arrow function when passing arguments.
+
+
+*/
+
+/* 
+----------------------------------------------------------
+------------- State in React -----------------------------
+----------------------------------------------------------
+
+In React, state is a built-in feature that allows components to manage, store, and track data that changes over time
+
+React state can't be use into the for loop and if else statment and any function inside
+
+Don't update state manually only update using the setter function .
+
+------------- Eample
+
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count + 1)}>+</button>
+    </>
+  );
+}
+
+
 
 */
