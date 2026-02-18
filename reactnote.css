@@ -488,6 +488,75 @@ function Counter() {
   );
 }
 
+*/
+
+/*
+----------------------------------------------------------
+------------- What is a Controlled Component? ------------
+----------------------------------------------------------
+
+----------- In React, when you:
+
+Store input value in state
+Control input using value={state}
+Update it using onChange
+
+👉 That input becomes a Controlled Component.
+
+------------- ✅ Example (Controlled Component)
+
+import { useState } from "react";
+
+function App() {
+  const [name, setName] = useState("");
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <p>You typed: {name}</p>
+    </div>
+  );
+}
+
+export default App;
+
+-------- 🔎 What is happening here?
+
+name is stored in React state
+value={name} → React controls the input
+onChange updates state
+UI updates automatically
+React is now the single source of truth.
+
+
+*/
+
+/*
+----------------------------------------------------------
+------ Difference Between the Props and State ------------
+----------------------------------------------------------
+
+----------- State In React
+
+1 ) -- Internal data , Owned by component .
+2 ) -- Component Memory .
+3 ) -- Can be Updated by the Component itself .
+4 ) -- Updated state causes component to re render .
+5 ) -- Used to make Components interactive .
+
+
+---------- Props In React 
+
+1 ) -- External data , Owned by parent Component .
+2 ) -- Similar to Function parameters .
+3 ) -- Read Only .
+4 ) -- Receving new props causes component to re render Ussally when the parent's state has been updated .
+5 ) -- Used by parent to configure child Components .
 
 
 */
