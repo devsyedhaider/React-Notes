@@ -560,3 +560,41 @@ React is now the single source of truth.
 
 
 */
+
+/*
+----------------------------------------------------------
+----------- State Management in React  -------------------
+----------------------------------------------------------
+
+Thinking about State .
+
+1 ) -- When to use State.
+2 ) -- Type of State : Local vs Global.
+3 ) -- Where to place each peice of State.
+
+
+Establish data flow.
+
+1 ) -- One way data flow.
+2 ) -- Child to parent communication.
+3 ) -- Accesing Global State.
+
+
+*/
+
+/* 
+----------------------------------------------------------
+----------- Local Vs Global State in React ---------------
+----------------------------------------------------------
+
+-------- Local State
+
+local state is confined to a single component (and its direct children via props),
+
+----------- Global State 
+
+State that many components might need
+
+Shared state that is accessible to every component in the entire applicaion.
+
+*/
