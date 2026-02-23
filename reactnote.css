@@ -598,3 +598,39 @@ State that many components might need
 Shared state that is accessible to every component in the entire applicaion.
 
 */
+
+/*
+----------------------------------------------------------
+----------- Lifting Up State in React --------------------
+----------------------------------------------------------
+
+lifting up state is used to shared a state same date into siblings components .
+
+--------- ✅ What is Lifting State Up?
+
+If two components need the same data
+The state should live in their closest common parent
+
+Then:
+
+Parent keeps the state
+Parent passes data down as props
+Child sends updates up using functions
+
+function App() {
+  const [items, setItems] = useState([]);
+
+  function handleAdd(item) {
+    setItems((items) => [...items, item]);
+  }
+
+  return (
+    <>
+      <Form onAddItem={handleAdd} />
+      <PackingList items={items} />
+    </>
+  );
+}
+
+
+*/
